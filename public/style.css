@@ -1,0 +1,225 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f7fc; /* Botticelli */
+    color: #050505; /* Black */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    color: #3b79b9; /* Boston Blue */
+    margin-top: 1.875rem; /* 30px */
+    font-size: 2.5rem; /* 40px */
+}
+
+p {
+    text-align: center;
+    color: #050505; /* Black */
+    font-size: 1rem; /* 16px */
+    margin: 0.625rem; /* 10px */
+}
+
+.form-container {
+    max-width: 50rem; /* 800px */
+    margin: 0 auto; /* Center-align the container */
+    padding: 0.3125rem; /* 5px */
+}
+
+.form-container p {
+    text-align: center; /* Center-align the text inside the paragraph */
+    color: #050505; /* Ensure the text color matches your design */
+}
+
+/* Form Container */
+form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping for small screens */
+    padding: 1.25rem; /* 20px */
+    max-width: 50rem; /* 800px */
+    margin: 1.875rem auto; /* 30px */
+    background-color: white;
+    border-radius: 0.625rem; /* 10px */
+    box-shadow: 0px 0.25rem 0.625rem rgba(0, 0, 0, 0.1); /* 4px 10px */
+}
+
+/* Left side (name, last name, email) */
+form .left-side {
+    flex: 1;
+    margin-right: 1.25rem; /* 20px */
+    min-width: 18.75rem; /* 300px */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+form .left-side label {
+    margin-bottom: 0.3125rem; /* 5px */
+}
+
+form .left-side input {
+    height: 2.8125rem; /* 45px */
+    margin-bottom: 0.9375rem; /* 15px */
+}
+
+/* Right side (file upload and expiration date) */
+form .right-side {
+    flex: 1;
+    min-width: 18.75rem; /* 300px */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+form .right-side label {
+    margin-bottom: 0.3125rem; /* 5px */
+}
+
+form .right-side input {
+    height: 2.8125rem; /* 45px */
+    margin-bottom: 0.9375rem; /* 15px */
+}
+
+/* Labels and Inputs */
+label {
+    display: block;
+    font-weight: bold;
+    color: #050505; /* Black */
+}
+
+/* File Upload Section */
+#fileUploadContainer {
+    width: 100%;
+    height: 10.3125rem; /* 165px */
+    border: 0.125rem dotted #92bcdd; /* 2px */
+    border-radius: 0.25rem; /* 4px */
+    padding: 1.25rem; /* 20px */
+    text-align: center;
+    background-color: #f0f7fc;
+    position: relative;
+    margin-bottom: 0.9375rem; /* 15px */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+#fileUploadContainer:hover {
+    cursor: pointer;
+    background-color: #d3e7f5; /* Lighter shade on hover */
+}
+
+#fileUploadIcon {
+    font-size: 3.125rem; /* 50px */
+    color: #3b79b9; /* Boston Blue */
+    margin-bottom: 0.625rem; /* 10px */
+}
+
+#fileUploadNotice {
+    color: #050505; /* Black */
+    font-size: 0.875rem; /* 14px */
+}
+
+input[type="file"] {
+    display: none; /* Hide the actual file input */
+}
+
+button {
+    background-color: #3b79b9; /* Boston Blue */
+    color: white;
+    padding: 0.75rem 1.25rem; /* 12px 20px */
+    border: none;
+    border-radius: 0.25rem; /* 4px */
+    cursor: pointer;
+    font-size: 1rem; /* 16px */
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #92bcdd; /* Morning Glory */
+}
+
+/* Responsiveness */
+@media (max-width: 64rem) { /* 1024px (tablet) */
+    h1 {
+        font-size: 2rem; /* Reduce heading size */
+    }
+
+    .form-container {
+        max-width: 40rem; /* 640px */
+    }
+
+    form {
+        flex-direction: column; /* Stack form fields on smaller screens */
+        padding: 1.25rem; /* Increase padding for better spacing */
+    }
+
+    .left-side, .right-side {
+        width: 100%; /* Make each side take full width */
+        margin-right: 0; /* Remove right margin */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="file"],
+    button {
+        width: 100%; /* Ensure inputs and button span full width */
+    }
+}
+
+@media (max-width: 48rem) { /* 768px (tablet/large phone) */
+    h1 {
+        font-size: 1.75rem; /* Slightly smaller heading */
+    }
+
+    .form-container {
+        max-width: 100%; /* Allow full width for smaller screens */
+        padding: 0.625rem; /* Reduce padding */
+    }
+
+    form {
+        flex-direction: column; /* Stack form fields */
+    }
+
+    .left-side, .right-side {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="file"],
+    button {
+        width: 100%; /* Ensure all inputs and button span full width */
+    }
+
+    #fileUploadContainer {
+        height: 9rem; /* 144px */
+    }
+
+    #fileUploadIcon {
+        font-size: 2.5rem; /* 40px */
+    }
+}
+
+@media (max-width: 36rem) { /* 576px (small phones) */
+    h1 {
+        font-size: 1.5rem; /* Smaller heading for small devices */
+    }
+
+    .form-container {
+        max-width: 100%;
+        padding: 0.625rem; /* Reduce padding further for small screens */
+    }
+
+    form {
+        padding: 1rem; /* Less padding for small devices */
+    }
+
+    button {
+        padding: 0.75rem; /* Adjust button padding */
+    }
+}

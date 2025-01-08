@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css">
+    <!-- Font Awesome CDN for cloud icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">   
+</head>
+<body>
+    <h1>UMMC Volunteer Badge Confirmation</h1>
+    <div class="form-container">
+        <p>
+            Complete this form within <strong>48 hours</strong> of signing up for your shadowing slot to confirm your UMMC volunteer badge status. Failure to do so will result in cancellation. If you do not have a UMMC Volunteer Badge, please remove yourself from the slot.
+
+            <br><br>
+            <i>
+            Note: If unsure of your badge expiration, contact the UMMC Volunteer Office before signing up.
+            </i>
+        </p>
+    </div>    
+    <form action="/submit" method="POST" enctype="multipart/form-data">
+        <div class="left-side">
+            <label for="name">First Name:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+    
+            <label for="email">Email:</label>  
+            <input type="email" id="email" name="email" required>
+        </div>
+    
+        <div class="right-side">
+            <div id="fileUploadContainer">
+                <label for="idPhoto" class="file-upload-label">
+                    <div id="fileUploadIcon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <div id="fileUploadNotice">Upload UMMC Badge Photo (JPG, PNG, JPEG)</div>
+                </label>
+                <input type="file" id="idPhoto" name="idPhoto" accept="image/*" required>
+            </div>
+    
+            <label for="expirationDate">Expiration Date:</label>
+            <input type="date" id="expirationDate" name="expirationDate" required>
+        </div>
+    
+        <button type="submit">Submit</button>
+    </form>      
+</body>
+</html>
